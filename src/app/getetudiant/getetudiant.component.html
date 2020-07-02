@@ -1,0 +1,9 @@
+<h2>Etudiant détail : {{ id }}</h2>
+<ul  *ngFor="let champs of etudiant">
+    <li>{{ champs.id }}</li>
+    <li>{{ champs.name }}</li>
+    <li>{{ champs.course }}</li>
+    <li>{{ champs.created_at | date:'short'}}</li>
+    <li>{{ champs.updated_at | date:'short'}}</li>
+</ul>
+<a  routerLink='/getAll'  class="btn btn-warning"> Retour </a>

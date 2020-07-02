@@ -1,0 +1,31 @@
+<h2> Get All Etudiants</h2>
+<a class="btn btn-success" routerLink='/add' style="margin-bottom: 20px;">Ajouter</a>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Course</th>
+        <th>Data Creation</th>
+        <th>Data Modification</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let etudiant of etudiants">
+     
+    
+      <tr>
+        <td>{{ etudiant.id }}</td>
+        <td>{{ etudiant.name }}</td>
+        <td>{{ etudiant.course }}</td>
+        <td>{{ etudiant.created_at | date:'short'}}</td>
+        <td>{{ etudiant.updated_at | date:'short'}}</td>
+        <td><a class="btn btn-success" routerLink='/getEtudiant/{{etudiant.id}}'>Voir</a></td>
+        <td><button class="btn btn-danger" (click)="deleteEtudiant(etudiant.id)">Delete</button></td>
+      </tr>
+    
+      
+    </tbody>
+  </table>
